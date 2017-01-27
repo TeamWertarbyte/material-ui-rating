@@ -1,0 +1,45 @@
+{
+  "name": "material-ui-rating",
+  "version": "0.1.0",
+  "description": "Material style rating",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel src -d lib",
+    "prepublish": "babel src -d lib",
+    "storybook": "start-storybook -p 6006",
+    "deploy-storybook": "storybook-to-ghpages"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TeamWertarbyte/material-ui-rating.git"
+  },
+  "keywords": [
+    "react",
+    "material",
+    "rating",
+    "react-component"
+  ],
+  "author": "Wertarbyte <kontakt@wertarbyte.com> (https://wertarbyte.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TeamWertarbyte/material-ui-rating/issues"
+  },
+  "homepage": "https://github.com/TeamWertarbyte/material-ui-rating#readme",
+  "devDependencies": {
+    "@kadira/storybook": "^2.5.2",
+    "@kadira/storybook-deployer": "^1.2.0",
+    "babel-cli": "^6.14.0",
+    "babel-core": "^6.8.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "material-ui": "^0.16.6",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-tap-event-plugin": "^2.0.1"
+  },
+  "peerDependencies": {
+    "material-ui": "^0.16.6",
+    "react": "^15.4.2"
+  }
+}
