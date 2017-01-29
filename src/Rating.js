@@ -36,6 +36,7 @@ export default class Rating extends Component {
       rating.push(
         <IconButton
           key={i}
+          disabled={this.props.disabled}
           onMouseEnter={() => this.setState({ hoverValue: i })}
           onMouseLeave={() => this.setState({ hoverValue: this.props.value })}
           onTouchTap={() => this.props.onChange(i)}
