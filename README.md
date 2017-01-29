@@ -32,10 +32,14 @@ render() {
 |Name            |Type        |Default     |Description
 |----------------|------------|------------|--------------------------------
 |disabled        | `boolean`  | `false`    | Disables the rating if set to true.
+|iconFilled      | `node`     | `<ToggleStar color={colors.orange500}/>`    | This is the icon to be used as an icon in value range.
+|iconHovered     | `node`     | `<ToggleStarBorder color={colors.orange500}/>`    | This is the icon to be used as an hovered icon.
+|iconNormal      | `node`     | `<ToggleStarBorder color={colors.grey300}/>`    | This is the icon to be used as an normal icon.
 |max             | `number`   | 5          | The max value of the rating bar.
 |onChange*       | `function` |            | Fired when a value is clicked.
 |style           | `object`   |            | Override the inline-styles of the root element.
 |value           | `number`   | 0          | The value of the rating bar.
+
 
 
 \* required property
