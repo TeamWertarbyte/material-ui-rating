@@ -31,6 +31,7 @@ render() {
 
 |Name            |Type        |Default     |Description
 |----------------|------------|------------|--------------------------------
+|disabled        | `boolean`  | `false`    | Disables the rating if set to true.
 |max             | `number`   | 5          | The max value of the rating bar.
 |onChange*       | `function` |            | Fired when a value is clicked.
 |style           | `object`   |            | Override the inline-styles of the root element.

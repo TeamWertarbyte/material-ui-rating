@@ -13,3 +13,12 @@ storiesOf('Rating', module)
       onChange={action('onChange')}
     />
   ))
+  .add('Disabled', () => themed(
+    <Rating
+      onRate={action('onRate')}
+      value={3}
+      max={5}
+      onChange={action('onChange')}
+      disabled
+    />
+  ))

@@ -20,9 +20,9 @@ export default class Rating extends Component {
         <RatingItem
           hovered={i <= this.state.hoverValue}
           filled={i <= this.props.value}
-          onMouseEnter={() => this.setState({ hoverValue: i })}
-          onMouseLeave={() => this.setState({ hoverValue: this.props.value })}
-          onTouchTap={() => this.props.onChange(i)}
+          onMouseEnter={this.props.disabled ? undefined : () => this.setState({ hoverValue: i })}
+          onMouseLeave={this.props.disabled ? undefined : () => this.setState({ hoverValue: this.props.value })}
+          onTouchTap={this.props.disabled ? undefined : () => this.props.onChange(i)}
         />
       )
     }
@@ -41,11 +41,13 @@ export default class Rating extends Component {
 }
 
 Rating.defaultProps = {
+  disabled: false,
   max: 5,
   value: 0
 }
 
 Rating.propTypes = {
+  disabled: PropTypes.bool,
   max: PropTypes.number,
   onChange: PropTypes.func.isRequired,
   style: PropTypes.object,
