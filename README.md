@@ -35,6 +35,8 @@ render() {
 |iconFilled      | `node`     | `<ToggleStar color={colors.orange500}/>`    | This is the icon to be used as an icon in value range.
 |iconHovered     | `node`     | `<ToggleStarBorder color={colors.orange500}/>`    | This is the icon to be used as an hovered icon.
 |iconNormal      | `node`     | `<ToggleStarBorder color={colors.grey300}/>`    | This is the icon to be used as an normal icon.
+|itemStyle       | `object`   |            | Override the inline-styles of the item elements.
+|itemIconStyle   | `object`   |            | Override the inline-icon-styles of the item elements.
 |max             | `number`   | 5          | The max value of the rating bar.
 |onChange*       | `function` |            | Fired when a value is clicked.
 |readOnly        | `boolean`  | `false`    | Don't allow input if set to true.
