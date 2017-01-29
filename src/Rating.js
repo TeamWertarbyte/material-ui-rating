@@ -18,6 +18,7 @@ export default class Rating extends Component {
     for (let i = 1; i <= this.props.max; i++) {
       rating.push(
         <RatingItem
+          key={i}
           hovered={i <= this.state.hoverValue}
           filled={i <= this.props.value}
           onMouseEnter={this.props.disabled ? undefined : () => this.setState({ hoverValue: i })}
