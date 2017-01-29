@@ -2,7 +2,9 @@ import React, { Component, PropTypes } from 'react'
 import RatingItem from './RatingItem'
 
 const styles = {
-  root: {}
+  disabled: {
+    pointerEvents: 'none'
+  }
 }
 
 export default class Rating extends Component {
@@ -21,19 +23,16 @@ export default class Rating extends Component {
           key={i}
           hovered={i <= this.state.hoverValue}
           filled={i <= this.props.value}
-          onMouseEnter={this.props.disabled ? undefined : () => this.setState({ hoverValue: i })}
-          onMouseLeave={this.props.disabled ? undefined : () => this.setState({ hoverValue: this.props.value })}
-          onTouchTap={this.props.disabled ? undefined : () => this.props.onChange(i)}
+          onMouseEnter={() => this.setState({ hoverValue: i })}
+          onMouseLeave={() => this.setState({ hoverValue: this.props.value })}
+          onTouchTap={() => this.props.onChange(i)}
         />
       )
     }
 
     return (
       <div
-        style={{
-          ...styles.root,
-          ...this.props.style
-        }}
+        style={this.props.disabled ? { ...styles.disabled, ...this.props.style } : this.props.style}
       >
         {rating}
       </div>
