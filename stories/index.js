@@ -15,6 +15,15 @@ storiesOf('Rating', module)
       onChange={action('onChange')}
     />
   ))
+  .add('ReadOnly', () => themed(
+    <Rating
+      onRate={action('onRate')}
+      value={3}
+      max={5}
+      onChange={action('onChange')}
+      readOnly
+    />
+  ))
   .add('Disabled', () => themed(
     <Rating
       onRate={action('onRate')}

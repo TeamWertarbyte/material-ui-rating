@@ -48,7 +48,7 @@ export default class Rating extends Component {
 
     return (
       <div
-        style={this.props.disabled ? { ...styles.disabled, ...this.props.style } : this.props.style}
+        style={this.props.disabled || this.props.readOnly ? { ...styles.disabled, ...this.props.style } : this.props.style}
       >
         {rating}
       </div>
@@ -62,6 +62,7 @@ Rating.defaultProps = {
   iconHovered: <ToggleStarBorder color={colors.orange500}/>,
   iconNormal: <ToggleStarBorder color={colors.grey300}/>,
   max: 5,
+  readOnly: false,
   value: 0
 }
 
@@ -72,6 +73,7 @@ Rating.propTypes = {
   iconNormal: PropTypes.node,
   max: PropTypes.number,
   onChange: PropTypes.func.isRequired,
+  readOnly: PropTypes.bool,
   style: PropTypes.object,
   value: PropTypes.number
 }
