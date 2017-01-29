@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import RatingItem from './RatingItem'
+import { IconButton } from 'material-ui'
 import { colors } from 'material-ui/styles'
 import { ToggleStar, ToggleStarBorder } from 'material-ui/svg-icons'
 
@@ -34,13 +34,14 @@ export default class Rating extends Component {
     const rating = []
     for (let i = 1; i <= this.props.max; i++) {
       rating.push(
-        <RatingItem
+        <IconButton
           key={i}
-          icon={this.renderIcon(i)}
           onMouseEnter={() => this.setState({ hoverValue: i })}
           onMouseLeave={() => this.setState({ hoverValue: this.props.value })}
           onTouchTap={() => this.props.onChange(i)}
-        />
+        >
+          {this.renderIcon(i)}
+        </IconButton>
       )
     }
 
