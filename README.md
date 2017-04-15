@@ -1,4 +1,6 @@
-# Material Rating [![Build Status](https://travis-ci.org/TeamWertarbyte/material-ui-rating.svg?branch=master)](https://travis-ci.org/TeamWertarbyte/material-ui-rating)
+# Material Rating 
+[![Build Status](https://travis-ci.org/TeamWertarbyte/material-ui-rating.svg?branch=master)](https://travis-ci.org/TeamWertarbyte/material-ui-rating)
+[![Greenkeeper badge](https://badges.greenkeeper.io/TeamWertarbyte/material-ui-rating.svg)](https://greenkeeper.io/)
 
 ![Example](preview.gif)
 
