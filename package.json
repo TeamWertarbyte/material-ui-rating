@@ -6,7 +6,7 @@
   "scripts": {
     "build": "babel src -d lib",
     "prepublish": "babel src -d lib",
-    "storybook": "start-storybook -p 6007",
+    "storybook": "start-storybook -p 6006",
     "deploy-storybook": "storybook-to-ghpages"
   },
   "repository": {
