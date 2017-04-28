@@ -42,7 +42,11 @@ export default class Rating extends Component {
           style={this.props.itemStyle}
           onMouseEnter={() => this.setState({ hoverValue: i })}
           onMouseLeave={() => this.setState({ hoverValue: this.props.value })}
-          onTouchTap={() => this.props.onChange(i)}
+          onTouchTap={() => {
+            if (!this.props.readOnly && this.props.onChange) {
+              this.props.onChange(i)
+            }
+          }}
         >
           {this.renderIcon(i)}
         </IconButton>
@@ -77,7 +81,7 @@ Rating.propTypes = {
   itemStyle: PropTypes.object,
   itemIconStyle: PropTypes.object,
   max: PropTypes.number,
-  onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func,
   readOnly: PropTypes.bool,
   style: PropTypes.object,
   value: PropTypes.number
