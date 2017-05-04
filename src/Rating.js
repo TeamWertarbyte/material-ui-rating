@@ -23,11 +23,11 @@ export default class Rating extends Component {
     const hovered = i <= this.state.hoverValue
 
     if ((hovered && !filled) || (!hovered && filled)) {
-      return this.props.iconHovered
+      return this.props.iconHovered || this.props.iconHoveredRenderer({...this.props, index : i})
     } else if (filled) {
-      return this.props.iconFilled
+      return this.props.iconFilled || this.props.iconFilledRenderer({...this.props, index : i})
     } else {
-      return this.props.iconNormal
+      return this.props.iconNormal || this.props.iconNormalRenderer({...this.props, index : i})
     }
   }
 
@@ -61,9 +61,12 @@ export default class Rating extends Component {
 
 Rating.defaultProps = {
   disabled: false,
-  iconFilled: <ToggleStar color={colors.orange500}/>,
-  iconHovered: <ToggleStarBorder color={colors.orange500}/>,
-  iconNormal: <ToggleStarBorder color={colors.grey300}/>,
+  iconFilled: null,
+  iconFilledRenderer = ({index, ...props}) => <ToggleStar color={colors.orange500}/>,
+  iconHovered: null,
+  iconHoveredRenderer = ({index, ...props}) => <ToggleStarBorder color={colors.orange500}/>,
+  iconNormal: null,
+  iconNormalRenderer = ({index, ...props}) => <ToggleStarBorder color={colors.grey300}/>,
   max: 5,
   readOnly: false,
   value: 0
@@ -74,6 +77,9 @@ Rating.propTypes = {
   iconFilled: PropTypes.node,
   iconHovered: PropTypes.node,
   iconNormal: PropTypes.node,
+  iconFilledRenderer: PropTypes.func,
+  iconHoveredRenderer: PropTypes.func,
+  iconNormalRenderer: PropTypes.func,
   itemStyle: PropTypes.object,
   itemIconStyle: PropTypes.object,
   max: PropTypes.number,
