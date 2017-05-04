@@ -62,11 +62,11 @@ export default class Rating extends Component {
 Rating.defaultProps = {
   disabled: false,
   iconFilled: null,
-  iconFilledRenderer = ({index, ...props}) => <ToggleStar color={colors.orange500}/>,
+  iconFilledRenderer: ({index, ...props}) => <ToggleStar color={colors.orange500}/>,
   iconHovered: null,
-  iconHoveredRenderer = ({index, ...props}) => <ToggleStarBorder color={colors.orange500}/>,
+  iconHoveredRenderer: ({index, ...props}) => <ToggleStarBorder color={colors.orange500}/>,
   iconNormal: null,
-  iconNormalRenderer = ({index, ...props}) => <ToggleStarBorder color={colors.grey300}/>,
+  iconNormalRenderer: ({index, ...props}) => <ToggleStarBorder color={colors.grey300}/>,
   max: 5,
   readOnly: false,
   value: 0
