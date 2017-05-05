@@ -3,6 +3,7 @@ import { action, storiesOf } from '@kadira/storybook'
 import { Rating } from '../src'
 import { themed } from './storyUtil'
 import { colors } from 'material-ui/styles'
+import FontIcon from 'material-ui/FontIcon'
 import { ContentAddCircle, ContentAddCircleOutline, ContentRemove } from 'material-ui/svg-icons'
 
 const styles = {
@@ -68,9 +69,9 @@ storiesOf('Rating', module)
       value={3}
       max={5}
       onChange={action('onChange')}
-      iconFilled={<ContentAddCircle color={colors.green500}/>}
-      iconHovered={<ContentAddCircleOutline color={colors.green500}/>}
-      iconNormal={<ContentRemove color={colors.red300}/>}
+      iconFilled={<ContentAddCircle color={colors.green500} />}
+      iconHovered={<ContentAddCircleOutline color={colors.green500} />}
+      iconNormal={<ContentRemove color={colors.red300} />}
     />
   ))
   .add('Custom Sizes', () => themed(
@@ -98,6 +99,22 @@ storiesOf('Rating', module)
         onChange={action('onChange')}
         itemStyle={styles.large}
         itemIconStyle={styles.largeIcon}
+      />
+    </div>
+  ))
+  .add('Dynamic', () => themed(
+    <div>
+      <Rating
+        onRate={action('onRate')}
+        value={3}
+        max={5}
+        onChange={action('onChange')}
+        itemIconStyle={{color : colors.green300}}
+        iconFilledRenderer={({index}) => <ContentAddCircle color={colors.green500} />}
+        iconHoveredRenderer={({index}) => <FontIcon >{index}</FontIcon>}
+        iconNormalRenderer={({index}) => <ContentAddCircleOutline color={colors.green500} />}
+        tooltipRenderer={({index}) => <span>{index}</span>}
+        tooltipPosition='bottom-center'
       />
     </div>
   ))
