@@ -506,6 +506,12 @@ babel-plugin-check-es2015-constants@^6.22.0, babel-plugin-check-es2015-constants
   dependencies:
     babel-runtime "^6.22.0"
 
+babel-plugin-material-ui@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/babel-plugin-material-ui/-/babel-plugin-material-ui-0.3.1.tgz#aa7cddb8f3ab3eeb004243ed8b11bb6a7524cc9c"
+  dependencies:
+    lodash "4.17.4"
+
 babel-plugin-react-docgen@^1.4.2:
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/babel-plugin-react-docgen/-/babel-plugin-react-docgen-1.4.2.tgz#04c02133b84b6cc182d35de2162f15764da03e7c"
@@ -2539,7 +2545,7 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@4.x.x, lodash@^4.14.0, lodash@^4.2.0, lodash@^4.2.1:
+lodash@4.17.4, lodash@4.x.x, lodash@^4.14.0, lodash@^4.2.0, lodash@^4.2.1:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
