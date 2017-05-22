@@ -11,35 +11,42 @@ const styles = {
 }
 
 export default class Rating extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       hoverValue: props.value
     }
   }
 
- 
-  renderIcon(i) {
+  renderIcon (i) {
     const filled = i <= this.props.value
     const hovered = i <= this.state.hoverValue
 
     if ((hovered && !filled) || (!hovered && filled)) {
-      return this.props.iconHoveredRenderer ? this.props.iconHoveredRenderer({...this.props, index : i}) : this.props.iconHovered
+      return this.props.iconHoveredRenderer ? this.props.iconHoveredRenderer({
+        ...this.props,
+        index: i
+      }) : this.props.iconHovered
     } else if (filled) {
-      return this.props.iconFilledRenderer ? this.props.iconFilledRenderer({...this.props, index : i}) : this.props.iconFilled
+      return this.props.iconFilledRenderer ? this.props.iconFilledRenderer({
+        ...this.props,
+        index: i
+      }) : this.props.iconFilled
     } else {
-      return this.props.iconNormalRenderer ? this.props.iconNormalRenderer({...this.props, index : i}) : this.props.iconNormal
+      return this.props.iconNormalRenderer ? this.props.iconNormalRenderer({
+        ...this.props,
+        index: i
+      }) : this.props.iconNormal
     }
   }
 
-
-  render() {
+  render () {
 
     const rating = []
-    
+
     for (let i = 1; i <= this.props.max; i++) {
 
-      const tooltip = this.props.tooltip || this.props.tooltipRenderer ? this.props.tooltipRenderer({index : i, ...this.props}) : null;
+      const tooltip = this.props.tooltip || this.props.tooltipRenderer ? this.props.tooltipRenderer({index: i, ...this.props}) : null
 
       rating.push(
         <IconButton
@@ -52,8 +59,8 @@ export default class Rating extends Component {
           tooltip={tooltip}
           tooltipPosition={this.props.tooltipPosition}
           tooltipStyles={this.props.tooltipStyles}
-          onMouseEnter={() => this.setState({ hoverValue: i })}
-          onMouseLeave={() => this.setState({ hoverValue: this.props.value })}
+          onMouseEnter={() => this.setState({hoverValue: i})}
+          onMouseLeave={() => this.setState({hoverValue: this.props.value})}
           onTouchTap={() => {
             if (!this.props.readOnly && this.props.onChange) {
               this.props.onChange(i)
@@ -67,7 +74,7 @@ export default class Rating extends Component {
 
     return (
       <div
-        style={this.props.disabled || this.props.readOnly ? { ...styles.disabled, ...this.props.style } : this.props.style}
+        style={this.props.disabled || this.props.readOnly ? {...styles.disabled, ...this.props.style} : this.props.style}
       >
         {rating}
       </div>
@@ -77,9 +84,9 @@ export default class Rating extends Component {
 
 Rating.defaultProps = {
   disabled: false,
-  iconFilled: <ToggleStar color={colors.orange500}/>,
-  iconHovered: <ToggleStarBorder color={colors.orange500}/>,
-  iconNormal: <ToggleStarBorder color={colors.grey300}/>,
+  iconFilled: <ToggleStar color={colors.orange500} />,
+  iconHovered: <ToggleStarBorder color={colors.orange500} />,
+  iconNormal: <ToggleStarBorder color={colors.grey300} />,
   tooltipPosition: 'bottom-center',
   max: 5,
   readOnly: false,
@@ -92,11 +99,11 @@ Rating.propTypes = {
   iconFilled: PropTypes.node,
   iconHovered: PropTypes.node,
   iconNormal: PropTypes.node,
-  iconClassName : PropTypes.string,
+  iconClassName: PropTypes.string,
   tooltip: PropTypes.node,
   tooltipRenderer: PropTypes.func,
   tooltipPosition: PropTypes.string,
-  tooltipStyles : PropTypes.object,
+  tooltipStyles: PropTypes.object,
   iconFilledRenderer: PropTypes.func,
   iconHoveredRenderer: PropTypes.func,
   iconNormalRenderer: PropTypes.func,
