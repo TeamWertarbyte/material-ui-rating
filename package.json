@@ -7,7 +7,9 @@
     "build": "babel src -d lib",
     "prepublish": "babel src -d lib",
     "storybook": "start-storybook -p 6006",
-    "deploy-storybook": "storybook-to-ghpages"
+    "deploy-storybook": "storybook-to-ghpages",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build"
   },
   "repository": {
     "type": "git",
@@ -28,6 +30,9 @@
   "devDependencies": {
     "@kadira/storybook": "^2.35.3",
     "@kadira/storybook-deployer": "^1.2.0",
+    "@webpack-blocks/babel6": "^0.4.1",
+    "@webpack-blocks/postcss": "^0.4.3",
+    "@webpack-blocks/webpack2": "^0.4.0",
     "babel-cli": "^6.14.0",
     "babel-core": "^6.8.0",
     "babel-plugin-material-ui": "^0.3.1",
@@ -38,6 +43,7 @@
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-styleguidist": "^5.2.1",
     "react-tap-event-plugin": "^2.0.1"
   },
   "peerDependencies": {

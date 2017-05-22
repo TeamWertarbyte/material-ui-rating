@@ -1,1 +1,1 @@
-export { default as Rating } from './Rating'
+export Rating from './components/Rating'
