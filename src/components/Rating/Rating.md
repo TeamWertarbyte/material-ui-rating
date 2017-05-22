@@ -103,6 +103,7 @@ Dynamic:
 ```
 const { ContentAddCircle, ContentAddCircleOutline, ContentRemove } = require('material-ui/svg-icons');
 const { colors } = require('material-ui/styles');
+const { FontIcon } = require('material-ui');
       <Rating
         onRate={() => console.log('onRate')}
         value={3}
