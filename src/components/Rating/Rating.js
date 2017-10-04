@@ -61,7 +61,7 @@ export default class Rating extends Component {
           tooltipStyles={this.props.tooltipStyles}
           onMouseEnter={() => this.setState({hoverValue: i})}
           onMouseLeave={() => this.setState({hoverValue: this.props.value})}
-          onTouchTap={() => {
+          onClick={() => {
             if (!this.props.readOnly && this.props.onChange) {
               this.props.onChange(i)
             }
