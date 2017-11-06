@@ -11,6 +11,10 @@ const styles = {
   }
 }
 
+/**
+ * Material design star rating component for oyur star application!
+ * @see [Card UI controls](https://material.io/guidelines/components/cards.html#cards-actions)
+ */
 export default class Rating extends Component {
   constructor (props) {
     super(props)
@@ -93,24 +97,44 @@ Rating.defaultProps = {
 }
 
 Rating.propTypes = {
+  /** Sets classname for IconButton component. */
   className: PropTypes.string,
+  /** Disables the rating and gray it out if set to true. */
   disabled: PropTypes.bool,
-  iconFilled: PropTypes.node,
-  iconHovered: PropTypes.node,
-  iconNormal: PropTypes.node,
+  /** Sets classname for icon in IconButton Component. */
   iconClassName: PropTypes.string,
-  tooltip: PropTypes.node,
-  tooltipRenderer: PropTypes.func,
-  tooltipPosition: PropTypes.string,
-  tooltipStyles: PropTypes.object,
+  /** This is the icon to be used as an icon in value range. */
+  iconFilled: PropTypes.node,
+  /** Overrides filled icon renderer. */
   iconFilledRenderer: PropTypes.func,
+  /** Overrides hovered icon renderer. */
   iconHoveredRenderer: PropTypes.func,
+  /** This is the icon to be used as an hovered icon. */
+  iconHovered: PropTypes.node,
+  /** This is the icon to be used as an normal icon. */
+  iconNormal: PropTypes.node,
+  /** Overrides normal icon renderer. */
   iconNormalRenderer: PropTypes.func,
-  itemStyle: PropTypes.object,
+  /** Override the inline-icon-styles of the item elements. */
   itemIconStyle: PropTypes.object,
+  /** Override the inline-styles of the item elements. */
+  itemStyle: PropTypes.object,
+  /** The max value of the rating bar. */
   max: PropTypes.number,
+  /** Fired when a value is clicked. */
   onChange: PropTypes.func,
+  /** Don't allow input if set to true. */
   readOnly: PropTypes.bool,
+  /** Override the inline-styles of the root element. */
   style: PropTypes.object,
+  /** Sets tooltip for icon in IconButton Component. */
+  tooltip: PropTypes.node,
+  /** Overrides tooltip renderer. */
+  tooltipRenderer: PropTypes.func,
+  /** Overrides tooltip position. */
+  tooltipPosition: PropTypes.string,
+  /** Overrides tooltip styles. */
+  tooltipStyles: PropTypes.object,
+  /** The value of the rating bar. */
   value: PropTypes.number
 }
