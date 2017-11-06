@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { IconButton } from 'material-ui'
-import { colors } from 'material-ui/styles'
-import { ToggleStar, ToggleStarBorder } from 'material-ui/svg-icons'
+import orange from 'material-ui/colors/orange'
+import grey from 'material-ui/colors/grey'
+import { Star, StarBorder } from 'material-ui-icons'
 
 const styles = {
   disabled: {
@@ -41,11 +42,9 @@ export default class Rating extends Component {
   }
 
   render () {
-
     const rating = []
 
     for (let i = 1; i <= this.props.max; i++) {
-
       const tooltip = this.props.tooltip || this.props.tooltipRenderer ? this.props.tooltipRenderer({index: i, ...this.props}) : null
 
       rating.push(
@@ -61,7 +60,7 @@ export default class Rating extends Component {
           tooltipStyles={this.props.tooltipStyles}
           onMouseEnter={() => this.setState({hoverValue: i})}
           onMouseLeave={() => this.setState({hoverValue: this.props.value})}
-          onClick={() => {
+          onTouchTap={() => {
             if (!this.props.readOnly && this.props.onChange) {
               this.props.onChange(i)
             }
@@ -84,9 +83,9 @@ export default class Rating extends Component {
 
 Rating.defaultProps = {
   disabled: false,
-  iconFilled: <ToggleStar color={colors.orange500} />,
-  iconHovered: <ToggleStarBorder color={colors.orange500} />,
-  iconNormal: <ToggleStarBorder color={colors.grey300} />,
+  iconFilled: <Star color={orange[500]} />,
+  iconHovered: <StarBorder color={orange[500]} />,
+  iconNormal: <StarBorder color={grey[300]} />,
   tooltipPosition: 'bottom-center',
   max: 5,
   readOnly: false,

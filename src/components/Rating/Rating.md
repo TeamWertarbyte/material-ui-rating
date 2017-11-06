@@ -29,16 +29,17 @@ Disabled:
 ```
 Custom Icons:
 ```
-const { ContentAddCircle, ContentAddCircleOutline, ContentRemove } = require('material-ui/svg-icons');
-const { colors } = require('material-ui/styles');
+const { AddCircle, AddCircleOutline, Remove } = require('material-ui-icons');
+const green = require('material-ui/colors/green');
+const red = require('material-ui/colors/red');
     <Rating
       onRate={() => console.log('onRate')}
       value={3}
       max={5}
       onChange={() => console.log('onChange')}
-      iconFilled={<ContentAddCircle color={colors.green500} />}
-      iconHovered={<ContentAddCircleOutline color={colors.green500} />}
-      iconNormal={<ContentRemove color={colors.red300} />}
+      iconFilled={<AddCircle color={green[500]} />}
+      iconHovered={<AddCircleOutline color={green[500]} />}
+      iconNormal={<Remove color={red[300]} />}
     />
 ```
 Custom Sizes:
@@ -101,18 +102,16 @@ const styles = {
 ```
 Dynamic:
 ```
-const { ContentAddCircle, ContentAddCircleOutline, ContentRemove } = require('material-ui/svg-icons');
-const { colors } = require('material-ui/styles');
-const { FontIcon } = require('material-ui');
+const { AddCircle, AddCircleOutline, Remove } = require('material-ui-icons');
+const green = require('material-ui/colors/green');
       <Rating
         onRate={() => console.log('onRate')}
         value={3}
         max={5}
         onChange={() => console.log('onChange')}
-        itemIconStyle={{color : colors.green300}}
-        iconFilledRenderer={({index}) => <ContentAddCircle color={colors.green500} />}
-        iconHoveredRenderer={({index}) => <FontIcon >{index}</FontIcon>}
-        iconNormalRenderer={({index}) => <ContentAddCircleOutline color={colors.green500} />}
+        itemIconStyle={{color : green[300]}}
+        iconFilledRenderer={({index}) => <AddCircle color={green[500]} />}
+        iconNormalRenderer={({index}) => <AddCircleOutline color={green[500]} />}
         tooltipRenderer={({index}) => <span>{index}</span>}
         tooltipPosition='bottom-center'
       />
