@@ -54,17 +54,11 @@ export default class Rating extends Component {
       rating.push(
         <IconButton
           key={i}
-          className={this.props.className}
+          classes={this.props.classes}
           disabled={this.props.disabled}
-          iconStyle={this.props.itemIconStyle}
-          iconClassName={this.props.iconClassName}
-          style={this.props.itemStyle}
-          tooltip={tooltip}
-          tooltipPosition={this.props.tooltipPosition}
-          tooltipStyles={this.props.tooltipStyles}
           onMouseEnter={() => this.setState({hoverValue: i})}
           onMouseLeave={() => this.setState({hoverValue: this.props.value})}
-          onTouchTap={() => {
+          onClick={() => {
             if (!this.props.readOnly && this.props.onChange) {
               this.props.onChange(i)
             }
@@ -87,9 +81,9 @@ export default class Rating extends Component {
 
 Rating.defaultProps = {
   disabled: false,
-  iconFilled: <Star color={orange[500]} />,
-  iconHovered: <StarBorder color={orange[500]} />,
-  iconNormal: <StarBorder color={grey[300]} />,
+  iconFilled: <Star nativeColor={orange[500]} />,
+  iconHovered: <StarBorder nativeColor={orange[500]} />,
+  iconNormal: <StarBorder nativeColor={grey[300]} />,
   tooltipPosition: 'bottom-center',
   max: 5,
   readOnly: false,
