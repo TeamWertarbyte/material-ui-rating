@@ -4,6 +4,7 @@
   "description": "Material style rating",
   "main": "lib/index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0",
     "build": "babel src -d lib",
     "prepare": "babel src -d lib",
     "styleguide": "styleguidist server",
