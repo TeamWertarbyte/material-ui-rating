@@ -1,7 +1,6 @@
 Normal:
 ```
     <Rating
-      onRate={() => console.log('onRate')}
       value={3}
       max={5}
       onChange={() => console.log('onChange')}
@@ -10,7 +9,6 @@ Normal:
 Read Only:
 ```
        <Rating
-          onRate={() => console.log('onRate')}
           value={3}
           max={5}
           onChange={() => console.log('onChange')}
@@ -20,7 +18,6 @@ Read Only:
 Disabled:
 ```
        <Rating
-          onRate={() => console.log('onRate')}
           value={3}
           max={5}
           onChange={() => console.log('onChange')}
@@ -33,7 +30,6 @@ const { AddCircle, AddCircleOutline, Remove } = require('material-ui-icons');
 const green = require('material-ui/colors/green').default;
 const red = require('material-ui/colors/red').default;
     <Rating
-      onRate={() => console.log('onRate')}
       value={3}
       max={5}
       onChange={() => console.log('onChange')}
@@ -80,7 +76,6 @@ const largeStyles = {
 };
 const MyRating = ({classes}) => (
   <Rating
-    onRate={() => console.log('onRate')}
     value={3}
     max={5}
     onChange={() => console.log('onChange')}
@@ -108,7 +103,6 @@ const styles = {
 };
 const MyRating = ({classes}) => (
   <Rating
-    onRate={() => console.log('onRate')}
     value={3}
     max={5}
     onChange={() => console.log('onChange')}
