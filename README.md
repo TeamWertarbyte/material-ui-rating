@@ -58,6 +58,17 @@ render() {
 
 \* required property
 
+
+### CSS API
+
+You can override all the class names injected by Material-UI-Rating thanks to the `classes` property. This property accepts the following keys:
+
+- `root` - Applied to the root `div` element
+- `iconButton` - Applied to the IconButton component
+- `icon` - Applied to the SvgIcon component
+- `disabled` - Applied to the IconButton component when disabled prop is `true`
+- `readOnly` - Applied to the IconButton component when readOnly prop is `true`
+
 ## License
 
 The files included in this repository are licensed under the MIT license.

@@ -115,7 +115,7 @@ Rating.defaultProps = {
 }
 
 Rating.propTypes = {
-  /** Sets classes for IconButton and SvgIcon components. */
+  /** Useful to extend the style applied to components. See the repository README for the accepted keys. */
   classes: PropTypes.object.isRequired,
   /** Disables the rating and gray it out if set to true. */
   disabled: PropTypes.bool,
