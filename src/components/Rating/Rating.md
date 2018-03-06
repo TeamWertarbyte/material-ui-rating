@@ -3,7 +3,7 @@ Normal:
     <Rating
       value={3}
       max={5}
-      onChange={() => console.log('onChange')}
+      onChange={(i) => console.log('onChange ' + i)}
     />
 ```
 Read Only:
@@ -11,7 +11,7 @@ Read Only:
        <Rating
           value={3}
           max={5}
-          onChange={() => console.log('onChange')}
+          onChange={(i) => console.log('onChange ' + i)}
           readOnly
         />
 ```
@@ -20,7 +20,7 @@ Disabled:
        <Rating
           value={3}
           max={5}
-          onChange={() => console.log('onChange')}
+          onChange={(i) => console.log('onChange ' + i)}
           disabled
         />
 ```
@@ -32,7 +32,7 @@ const red = require('material-ui/colors/red').default;
     <Rating
       value={3}
       max={5}
-      onChange={() => console.log('onChange')}
+      onChange={(i) => console.log('onChange ' + i)}
       iconFilled={<AddCircle nativeColor={green[500]} />}
       iconHovered={<AddCircleOutline nativeColor={green[500]} />}
       iconNormal={<Remove nativeColor={red[300]} />}
@@ -78,7 +78,7 @@ const MyRating = ({classes}) => (
   <Rating
     value={3}
     max={5}
-    onChange={() => console.log('onChange')}
+    onChange={(i) => console.log('onChange ' + i)}
     classes={classes}
   />
 );
@@ -105,7 +105,7 @@ const MyRating = ({classes}) => (
   <Rating
     value={3}
     max={5}
-    onChange={() => console.log('onChange')}
+    onChange={(i) => console.log('onChange ' + i)}
     iconFilledRenderer={({index}) => <AddCircle nativeColor={green[500]} />}
     iconHoveredRenderer={({index}) => <span className={classes.icon}>{index}</span>}
     iconNormalRenderer={({index}) => <AddCircleOutline nativeColor={green[500]} />}
