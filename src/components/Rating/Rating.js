@@ -5,7 +5,7 @@ import orange from 'material-ui/colors/orange'
 import grey from 'material-ui/colors/grey'
 import { Star, StarBorder } from 'material-ui-icons'
 import { withStyles } from 'material-ui/styles'
-import classNames from 'classnames';
+import classNames from 'classnames'
 
 const styles = {
   root: {},
@@ -32,26 +32,26 @@ class Rating extends Component {
     const filled = i <= this.props.value
     const hovered = i <= this.state.hoverValue
 
-    const normalColor = this.props.disabled ? {} : {nativeColor: grey[300]};
-    const orangeColor = this.props.disabled ? {} : {nativeColor: orange[500]};
+    const normalColor = this.props.disabled ? {} : {nativeColor: grey[300]}
+    const orangeColor = this.props.disabled ? {} : {nativeColor: orange[500]}
 
-    const iconHovered = !this.props.iconHovered ?
-      <StarBorder
+    const iconHovered = !this.props.iconHovered
+      ? <StarBorder
         classes={{ root: this.props.classes.icon }}
-        {...orangeColor} /> :
-      this.props.iconHovered
+        {...orangeColor} />
+      : this.props.iconHovered
 
-    const iconFilled = !this.props.iconFilled ?
-      <Star
+    const iconFilled = !this.props.iconFilled
+      ? <Star
         classes={{root: this.props.classes.icon}}
-        {...orangeColor} /> :
-      this.props.iconFilled
+        {...orangeColor} />
+      : this.props.iconFilled
 
-    const iconNormal = !this.props.iconNormal ?
-      <StarBorder
+    const iconNormal = !this.props.iconNormal
+      ? <StarBorder
         className={this.props.classes.icon}
-        {...normalColor} /> :
-      this.props.iconNormal
+        {...normalColor} />
+      : this.props.iconNormal
 
     if ((hovered && !filled) || (!hovered && filled)) {
       return this.props.iconHoveredRenderer ? this.props.iconHoveredRenderer({
@@ -137,4 +137,4 @@ Rating.propTypes = {
   value: PropTypes.number
 }
 
-export default withStyles(styles)(Rating);
+export default withStyles(styles)(Rating)
