@@ -75,8 +75,6 @@ class Rating extends Component {
     const rating = []
 
     for (let i = 1; i <= this.props.max; i++) {
-      // console.log("classes", this.props.classes)
-
       rating.push(
         <IconButton
           key={i}
@@ -100,7 +98,7 @@ class Rating extends Component {
       )
     }
 
-    return (<div>{rating}</div>)
+    return (<div className={this.props.classes.root}>{rating}</div>)
   }
 }
 
