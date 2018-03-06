@@ -7,13 +7,16 @@ import { Star, StarBorder } from 'material-ui-icons'
 import { withStyles } from 'material-ui/styles'
 import classNames from 'classnames'
 
+const noPointerEvents = {
+  pointerEvents: 'none'
+}
+
 const styles = {
   root: {},
   iconButton: {},
   icon: {},
-  disabled: {
-    pointerEvents: 'none'
-  }
+  disabled: noPointerEvents,
+  readOnly: noPointerEvents
 }
 
 /**
@@ -72,24 +75,26 @@ class Rating extends Component {
   }
 
   render () {
+    const { classes, max, disabled, readOnly, value, onChange } = this.props
     const rating = []
 
-    for (let i = 1; i <= this.props.max; i++) {
+    for (let i = 1; i <= max; i++) {
       rating.push(
         <IconButton
           key={i}
           className={classNames(
-            this.props.classes.iconButton,
+            classes.iconButton,
             {
-              [this.props.classes.disabled]: this.props.disabled || this.props.readOnly
+              [classes.disabled]: disabled,
+              [classes.readOnly]: readOnly
             }
           )}
-          disabled={this.props.disabled}
+          disabled={disabled}
           onMouseEnter={() => this.setState({hoverValue: i})}
-          onMouseLeave={() => this.setState({hoverValue: this.props.value})}
+          onMouseLeave={() => this.setState({hoverValue: value})}
           onClick={() => {
-            if (!this.props.readOnly && this.props.onChange) {
-              this.props.onChange(i)
+            if (!readOnly && onChange) {
+              onChange(i)
             }
           }}
         >
@@ -98,13 +103,12 @@ class Rating extends Component {
       )
     }
 
-    return (<div className={this.props.classes.root}>{rating}</div>)
+    return (<div className={classes.root}>{rating}</div>)
   }
 }
 
 Rating.defaultProps = {
   disabled: false,
-  tooltipPosition: 'bottom-center',
   max: 5,
   readOnly: false,
   value: 0
