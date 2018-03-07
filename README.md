@@ -39,22 +39,20 @@ render() {
 
 ### Material Rating Properties
 
-|Name            |Type        |Default     |Description
-|----------------|------------|------------|--------------------------------
-|classes       | `object`  | | Sets classes for components.
-|disabled        | `boolean`  | `false`    | Disables the rating and gray it out if set to true.
-|iconFilled      | `node`     | `<ToggleStar color={colors.orange500}/>`    | This is the icon to be used as an icon in value range.
-|iconFilledRenderer           | `func`   |            | Overrides filled icon renderer.
-|iconHovered     | `node`     | `<ToggleStarBorder color={colors.orange500}/>`    | This is the icon to be used as an hovered icon.
-|iconHoveredRenderer           | `func`   |            | Overrides hovered icon renderer.
-|iconNormal      | `node`     | `<ToggleStarBorder color={colors.grey300}/>`    | This is the icon to be used as an normal icon.
-|iconNormalRenderer           | `func`   |            | Overrides normal icon renderer.
-|max             | `number`   | 5          | The max value of the rating bar.
-|onChange       | `function` |            | Fired when a value is clicked.
-|readOnly        | `boolean`  | `false`    | Don't allow input if set to true.
-|value           | `number`   | 0          | The value of the rating bar.
-
-
+|Name               |Type    |Default|Description                                                                          |
+|-------------------|--------|-------|-------------------------------------------------------------------------------------|
+|classes*           |`object`|       |Useful to extend the style applied to components. The accepted keys are listed below.|
+|disabled           |`bool`  |`false`|Disables the rating and gray it out if set to true.                                  |
+|iconFilled         |`node`  |       |This is the icon to be used as an icon in value range.                               |
+|iconFilledRenderer |`func`  |       |Overrides filled icon renderer.                                                      |
+|iconHoveredRenderer|`func`  |       |Overrides hovered icon renderer.                                                     |
+|iconHovered        |`node`  |       |This is the icon to be used as an hovered icon.                                      |
+|iconNormal         |`node`  |       |This is the icon to be used as an normal icon.                                       |
+|iconNormalRenderer |`func`  |       |Overrides normal icon renderer.                                                      |
+|max                |`number`|`5`    |The max value of the rating bar.                                                     |
+|onChange           |`func`  |       |Fired when a value is clicked.                                                       |
+|readOnly           |`bool`  |`false`|Don't allow input if set to true.                                                    |
+|value              |`number`|`0`    |The value of the rating bar.                                                         |
 
 \* required property
 
