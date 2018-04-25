@@ -46,7 +46,7 @@
     "babel-preset-stage-0": "^6.16.0",
     "gh-pages": "^1.0.0",
     "material-ui": "^1.0.0-beta.36",
-    "material-ui-icons": "^1.0.0-beta.36",
+    "@material-ui/icons": "^1.0.0-beta.43",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-styleguidist": "^6.0.33",
