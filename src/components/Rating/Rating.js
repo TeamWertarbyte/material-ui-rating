@@ -41,29 +41,47 @@ export default class Rating extends Component {
   }
 
   render () {
+    const {
+      disabled,
+      iconFilled,
+      iconHovered,
+      iconNormal,
+      tooltip,
+      tooltipRenderer,
+      tooltipPosition,
+      tooltipStyles,
+      iconFilledRenderer,
+      iconHoveredRenderer,
+      iconNormalRenderer,
+      itemStyle,
+      itemClassName,
+      itemIconStyle,
+      max,
+      onChange,
+      readOnly,
+      style,
+      value,
+      ...other
+    } = this.props
 
     const rating = []
 
-    for (let i = 1; i <= this.props.max; i++) {
-
-      const tooltip = this.props.tooltip || this.props.tooltipRenderer ? this.props.tooltipRenderer({index: i, ...this.props}) : null
-
+    for (let i = 1; i <= max; i++) {
       rating.push(
         <IconButton
           key={i}
-          className={this.props.className}
-          disabled={this.props.disabled}
-          iconStyle={this.props.itemIconStyle}
-          iconClassName={this.props.iconClassName}
-          style={this.props.itemStyle}
-          tooltip={tooltip}
-          tooltipPosition={this.props.tooltipPosition}
-          tooltipStyles={this.props.tooltipStyles}
+          className={itemClassName}
+          disabled={disabled}
+          iconStyle={itemIconStyle}
+          style={itemStyle}
+          tooltip={tooltip || tooltipRenderer ? tooltipRenderer({index: i, ...this.props}) : null}
+          tooltipPosition={tooltipPosition}
+          tooltipStyles={tooltipStyles}
           onMouseEnter={() => this.setState({hoverValue: i})}
-          onMouseLeave={() => this.setState({hoverValue: this.props.value})}
+          onMouseLeave={() => this.setState({hoverValue: value})}
           onClick={() => {
-            if (!this.props.readOnly && this.props.onChange) {
-              this.props.onChange(i)
+            if (!readOnly && onChange) {
+              onChange(i)
             }
           }}
         >
@@ -75,6 +93,7 @@ export default class Rating extends Component {
     return (
       <div
         style={this.props.disabled || this.props.readOnly ? {...styles.disabled, ...this.props.style} : this.props.style}
+        {...other}
       >
         {rating}
       </div>
@@ -94,12 +113,10 @@ Rating.defaultProps = {
 }
 
 Rating.propTypes = {
-  className: PropTypes.string,
   disabled: PropTypes.bool,
   iconFilled: PropTypes.node,
   iconHovered: PropTypes.node,
   iconNormal: PropTypes.node,
-  iconClassName: PropTypes.string,
   tooltip: PropTypes.node,
   tooltipRenderer: PropTypes.func,
   tooltipPosition: PropTypes.string,
@@ -108,6 +125,7 @@ Rating.propTypes = {
   iconHoveredRenderer: PropTypes.func,
   iconNormalRenderer: PropTypes.func,
   itemStyle: PropTypes.object,
+  itemClassName: PropTypes.object,
   itemIconStyle: PropTypes.object,
   max: PropTypes.number,
   onChange: PropTypes.func,

@@ -41,13 +41,12 @@ render() {
 
 |Name            |Type        |Default     |Description
 |----------------|------------|------------|--------------------------------
-|className       | `string`  | | Sets classname for IconButton component.
 |disabled        | `boolean`  | `false`    | Disables the rating and gray it out if set to true.
-|iconClassName      | `string`     | | Sets classname for icon in IconButton Component.
 |iconFilled      | `node`     | `<ToggleStar color={colors.orange500}/>`    | This is the icon to be used as an icon in value range.
 |iconFilledRenderer           | `func`   |            | Overrides filled icon renderer.
 |iconHovered     | `node`     | `<ToggleStarBorder color={colors.orange500}/>`    | This is the icon to be used as an hovered icon.
 |iconHoveredRenderer           | `func`   |            | Overrides hovered icon renderer.
+|itemClassName   | `string`  | | Sets classname for the item elements.
 |itemIconStyle   | `object`   |            | Override the inline-icon-styles of the item elements.
 |iconNormal      | `node`     | `<ToggleStarBorder color={colors.grey300}/>`    | This is the icon to be used as an normal icon.
 |iconNormalRenderer           | `func`   |            | Overrides normal icon renderer.
