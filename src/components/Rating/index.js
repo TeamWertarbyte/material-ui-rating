@@ -1,1 +1,2 @@
-export default from './Rating'
+import Rating from './Rating'
+export default Rating;

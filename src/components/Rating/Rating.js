@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { IconButton } from 'material-ui'
-import { colors } from 'material-ui/styles'
-import { ToggleStar, ToggleStarBorder } from 'material-ui/svg-icons'
+import { IconButton } from '@material-ui/core'
+import { colors } from '@material-ui/core/styles'
+import { ToggleStar, ToggleStarBorder } from '@material-ui/icons'
 
 const styles = {
   disabled: {

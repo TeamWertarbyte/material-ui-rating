@@ -28,6 +28,8 @@
   },
   "homepage": "https://github.com/TeamWertarbyte/material-ui-rating#readme",
   "devDependencies": {
+    "@material-ui/core": "^3.5.1",
+    "@material-ui/icons": "^3.0.1",
     "@webpack-blocks/babel6": "^0.4.1",
     "@webpack-blocks/postcss": "^0.4.3",
     "@webpack-blocks/webpack2": "^0.4.0",
@@ -45,9 +47,9 @@
     "react-styleguidist": "^5.2.1"
   },
   "peerDependencies": {
-    "material-ui": "<1.0.0",
-    "react": "^15.5.4 || ^16.0.0",
-    "react-dom": "^15.5.4 || ^16.0.0"
+    "material-ui": "<3.5.1",
+    "react": "<16.3.0",
+    "react-dom": "<16.3.0"
   },
   "dependencies": {
     "prop-types": "^15.5.8"
