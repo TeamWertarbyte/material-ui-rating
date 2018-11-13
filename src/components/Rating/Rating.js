@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { IconButton } from '@material-ui/core'
-import { colors } from '@material-ui/core/styles'
-import { ToggleStar, ToggleStarBorder } from '@material-ui/icons'
+import { colors } from '@material-ui/core'
+import { Star as ToggleStar, StarBorder as ToggleStarBorder} from '@material-ui/icons'
 
 const styles = {
   disabled: {
@@ -103,9 +103,9 @@ export default class Rating extends Component {
 
 Rating.defaultProps = {
   disabled: false,
-  iconFilled: <ToggleStar color={colors.orange500} />,
-  iconHovered: <ToggleStarBorder color={colors.orange500} />,
-  iconNormal: <ToggleStarBorder color={colors.grey300} />,
+  iconFilled: <ToggleStar style={{color : colors.orange[500]}} />,
+  iconHovered: <ToggleStarBorder  style={{color : colors.orange[500]}} />,
+  iconNormal: <ToggleStarBorder style={{color : colors.green[300]}} />,
   tooltipPosition: 'bottom-center',
   max: 5,
   readOnly: false,
