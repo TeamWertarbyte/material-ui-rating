@@ -1,7 +1,6 @@
 # Material Rating
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![Build Status](https://travis-ci.org/TeamWertarbyte/material-ui-rating.svg)](https://travis-ci.org/TeamWertarbyte/material-ui-rating)
-[![Greenkeeper badge](https://badges.greenkeeper.io/TeamWertarbyte/material-ui-rating.svg)](https://greenkeeper.io/)
 
 ![Example](preview.gif)
 
@@ -16,18 +15,11 @@ npm install material-ui-rating
 ```js
 import { Rating } from 'material-ui-rating'
 
-// ...
-render() {
-  return(
-    <div>
-        <Rating
-          value={3}
-          max={5}
-          onChange={(value) => console.log(`Rated with value ${value}`)}
-        />
-    </div>
-  )
-}
+<Rating
+  value={3}
+  max={5}
+  onChange={(value) => console.log(`Rated with value ${value}`)}
+/>
 ```
 
 ### Material Rating Properties
