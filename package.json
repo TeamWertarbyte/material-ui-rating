@@ -7,7 +7,8 @@
     "test": "standard",
     "lintfix": "standard --fix",
     "build": "babel src -d lib",
-    "prepare": "babel src -d lib"
+    "prepare": "babel src -d lib",
+    "storybook": "start-storybook -p 6006"
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,8 @@
     "@babel/preset-react": "^7.0.0",
     "@material-ui/core": "^3.9.2",
     "@material-ui/icons": "^3.0.2",
+    "@storybook/addon-actions": "^4.1.11",
+    "@storybook/react": "^4.1.11",
     "babel-eslint": "^7.2.3",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
