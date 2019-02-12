@@ -1,6 +1,6 @@
 # Material Rating
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-[![Build Status](https://travis-ci.org/TeamWertarbyte/material-ui-rating.svg?branch=next)](https://travis-ci.org/TeamWertarbyte/material-ui-rating)
+[![Build Status](https://travis-ci.org/TeamWertarbyte/material-ui-rating.svg)](https://travis-ci.org/TeamWertarbyte/material-ui-rating)
 [![Greenkeeper badge](https://badges.greenkeeper.io/TeamWertarbyte/material-ui-rating.svg)](https://greenkeeper.io/)
 
 ![Example](preview.gif)
@@ -11,13 +11,6 @@
 ```sh
 npm install material-ui-rating
 ```
-
-**Pre-release channel**
-```sh
-npm install material-ui-rating@next
-```
-
-Please note that `@next` will only point to pre-releases; to get the latest stable release use `@latest` instead.
 
 ## Usage
 ```js

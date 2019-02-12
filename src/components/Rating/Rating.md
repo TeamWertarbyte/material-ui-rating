@@ -26,9 +26,9 @@ Disabled:
 ```
 Custom Icons:
 ```
-const { AddCircle, AddCircleOutline, Remove } = require('material-ui-icons');
-const green = require('material-ui/colors/green').default;
-const red = require('material-ui/colors/red').default;
+const { AddCircle, AddCircleOutline, Remove } = require('@material-ui/icons');
+const green = require('@material-ui/core/colors/green').default;
+const red = require('@material-ui/core/colors/red').default;
     <Rating
       value={3}
       max={5}
@@ -40,7 +40,7 @@ const red = require('material-ui/colors/red').default;
 ```
 Custom Sizes:
 ```
-const { withStyles } = require('material-ui/styles');
+const { withStyles } = require('@material-ui/core/styles');
 const smallStyles = {
   iconButton: {
     width: 72,
@@ -93,9 +93,9 @@ const LargeRating = withStyles(largeStyles)(MyRating);
 ```
 Dynamic:
 ```
-const { AddCircle, AddCircleOutline, Remove } = require('material-ui-icons');
-const { withStyles } = require('material-ui/styles');
-const green = require('material-ui/colors/green').default;
+const { AddCircle, AddCircleOutline, Remove } = require('@material-ui/icons');
+const { withStyles } = require('@material-ui/core/styles');
+const green = require('@material-ui/core/colors/green').default;
 const styles = {
   icon: {
     color: green[300]
