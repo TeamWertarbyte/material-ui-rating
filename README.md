@@ -1,4 +1,4 @@
-# Material Rating
+# Material-UI Rating
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![Build Status](https://travis-ci.org/TeamWertarbyte/material-ui-rating.svg)](https://travis-ci.org/TeamWertarbyte/material-ui-rating)
 
