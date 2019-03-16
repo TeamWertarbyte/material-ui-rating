@@ -21,7 +21,7 @@ const styles = {
 }
 
 /**
- * Material design star rating component for oyur star application!
+ * Material design star rating component for your star application.
  * @see [Card UI controls](https://material.io/guidelines/components/cards.html#cards-actions)
  */
 class Rating extends Component {
