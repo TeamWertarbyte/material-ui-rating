@@ -14,7 +14,13 @@ const noPointerEvents = {
 
 const styles = {
   root: {},
-  iconButton: {},
+  iconButton: {
+    padding: 8,
+    marginLeft: -8,
+    '&:first-child': {
+      marginLeft: 0
+    }
+  },
   icon: {},
   disabled: noPointerEvents,
   readOnly: noPointerEvents

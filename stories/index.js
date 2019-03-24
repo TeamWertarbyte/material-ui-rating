@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions'
 import Rating from '../src'
 
 storiesOf('Rating', module)
-  .add('with some chips', () => (
+  .add('with some stars', () => (
     <Rating
       value={3}
       max={5}
