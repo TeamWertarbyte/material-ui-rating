@@ -70,7 +70,6 @@ class Rating extends Component {
     const filled = rest > 0 || i <= value
     const hovered = rest > 0 || i <= Math.floor(this.state.hoverValue)
 
-
     if (rest > 0) {
       return (
         <React.Fragment>
@@ -79,7 +78,7 @@ class Rating extends Component {
           })}
           {React.cloneElement(this.state.hoverValue < value ? this.getIcon('hovered', i) : this.getIcon('filled', i), {
             style: {
-             clipPath: `polygon(0% 0%, ${rest * 100}% 0%, ${rest * 100}% 100%, 0% 100%)`
+              clipPath: `polygon(0% 0%, ${rest * 100}% 0%, ${rest * 100}% 100%, 0% 100%)`
             }
           })}
         </React.Fragment>
