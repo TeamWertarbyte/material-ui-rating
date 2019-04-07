@@ -38,13 +38,24 @@ storiesOf('Rating', module)
     const red = require('@material-ui/core/colors/red').default
 
     return (
-      <Rating
-        value={3}
-        max={5}
-        onChange={(i) => console.log('onChange ' + i)}
-        iconFilled={<AddCircle nativeColor={green[500]} />}
-        iconHovered={<AddCircleOutline nativeColor={green[500]} />}
-        iconNormal={<Remove nativeColor={red[300]} />}
-      />
+      <div>
+        <Rating
+          value={3}
+          max={5}
+          onChange={(i) => console.log('onChange ' + i)}
+          iconFilled={<AddCircle nativeColor={green[500]} />}
+          iconHovered={<AddCircleOutline nativeColor={green[500]} />}
+          iconNormal={<Remove nativeColor={red[300]} />}
+        />
+        <Rating
+          value={3}
+          max={5}
+          onChange={(i) => console.log('onChange ' + i)}
+          iconFilled={<AddCircle nativeColor={green[500]} />}
+          iconHovered={<AddCircleOutline nativeColor={green[500]} />}
+          iconNormal={<Remove nativeColor={red[300]} />}
+          disabled
+        />
+      </div>
     )
   })

@@ -21,7 +21,6 @@ const styles = {
       marginLeft: 0
     }
   },
-  icon: {},
   disabled: noPointerEvents,
   readOnly: noPointerEvents
 }
@@ -38,37 +37,47 @@ class Rating extends Component {
     }
   }
 
+  getIcon (type, index) {
+    const {
+      disabled,
+      iconNormal,
+      iconNormalRenderer,
+      iconHovered,
+      iconHoveredRenderer,
+      iconFilled,
+      iconFilledRenderer
+    } = this.props
+
+    switch (type) {
+      case 'normal':
+        return iconNormalRenderer
+          ? iconNormalRenderer({ ...this.props, index })
+          : (disabled ? React.cloneElement(iconNormal, { nativeColor: grey[300] }) : iconNormal)
+      case 'hovered':
+        return iconHoveredRenderer
+          ? iconHoveredRenderer({ ...this.props, index })
+          : (disabled ? React.cloneElement(iconHovered, { nativeColor: grey[300] }) : iconHovered)
+      case 'filled': return iconFilledRenderer
+        ? iconFilledRenderer({ ...this.props, index })
+        : (disabled ? React.cloneElement(iconFilled, { nativeColor: grey[300] }) : iconFilled)
+    }
+  }
+
   renderIcon (i) {
-    const rest = this.props.value >= i - 1 && this.props.value < i ? this.props.value - i + 1 : 0
-    const filled = rest > 0 || i <= this.props.value
+    const { value } = this.props
+
+    const rest = value >= i - 1 && value < i ? value - i + 1 : 0
+    const filled = rest > 0 || i <= value
     const hovered = rest > 0 || i <= Math.floor(this.state.hoverValue)
 
-    const normalColor = this.props.disabled ? {} : {nativeColor: grey[300]}
-    const orangeColor = this.props.disabled ? {} : {nativeColor: orange[500]}
 
-    const iconHovered = !this.props.iconHovered
-      ? <StarBorder
-        classes={{ root: this.props.classes.icon }}
-        {...orangeColor} />
-      : this.props.iconHovered
-
-    const iconFilled = !this.props.iconFilled
-      ? <Star
-        classes={{root: this.props.classes.icon}}
-        {...orangeColor} />
-      : this.props.iconFilled
-
-    const iconNormal = !this.props.iconNormal
-      ? <StarBorder
-        className={this.props.classes.icon}
-        {...normalColor} />
-      : this.props.iconNormal
-
-    if (rest > 0 && Math.floor(this.state.hoverValue) < this.props.value) {
+    if (rest > 0) {
       return (
         <React.Fragment>
-          {React.cloneElement(iconNormal, { style: { position: 'absolute' } })}
-          {React.cloneElement(this.state.hoverValue < this.props.value ? iconHovered : iconFilled, {
+          {React.cloneElement(Math.floor(this.state.hoverValue) < value ? this.getIcon('normal', i) : this.getIcon('hovered', i), {
+            style: { position: 'absolute' }
+          })}
+          {React.cloneElement(this.state.hoverValue < value ? this.getIcon('hovered', i) : this.getIcon('filled', i), {
             style: {
              clipPath: `polygon(0% 0%, ${rest * 100}% 0%, ${rest * 100}% 100%, 0% 100%)`
             }
@@ -78,20 +87,11 @@ class Rating extends Component {
     }
 
     if ((hovered && !filled) || (!hovered && filled)) {
-      return this.props.iconHoveredRenderer ? this.props.iconHoveredRenderer({
-        ...this.props,
-        index: i
-      }) : iconHovered
+      return this.getIcon('hovered', i)
     } else if (filled) {
-      return this.props.iconFilledRenderer ? this.props.iconFilledRenderer({
-        ...this.props,
-        index: i
-      }) : iconFilled
+      return this.getIcon('filled', i)
     } else {
-      return this.props.iconNormalRenderer ? this.props.iconNormalRenderer({
-        ...this.props,
-        index: i
-      }) : iconNormal
+      return this.getIcon('normal', i)
     }
   }
 
@@ -111,8 +111,8 @@ class Rating extends Component {
             }
           )}
           disabled={disabled}
-          onMouseEnter={() => this.setState({hoverValue: i})}
-          onMouseLeave={() => this.setState({hoverValue: value})}
+          onMouseEnter={() => this.setState({ hoverValue: i })}
+          onMouseLeave={() => this.setState({ hoverValue: value })}
           onClick={() => {
             if (!readOnly && onChange) {
               onChange(i)
@@ -132,7 +132,10 @@ Rating.defaultProps = {
   disabled: false,
   max: 5,
   readOnly: false,
-  value: 0
+  value: 0,
+  iconHovered: <StarBorder nativeColor={orange[500]} />,
+  iconFilled: <Star nativeColor={orange[500]} />,
+  iconNormal: <StarBorder nativeColor={grey[300]} />
 }
 
 Rating.propTypes = {
