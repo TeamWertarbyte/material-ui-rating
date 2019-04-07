@@ -39,8 +39,9 @@ class Rating extends Component {
   }
 
   renderIcon (i) {
-    const filled = i <= this.props.value
-    const hovered = i <= this.state.hoverValue
+    const rest = this.props.value >= i - 1 && this.props.value < i ? this.props.value - i + 1 : 0
+    const filled = rest > 0 || i <= this.props.value
+    const hovered = rest > 0 || i <= Math.floor(this.state.hoverValue)
 
     const normalColor = this.props.disabled ? {} : {nativeColor: grey[300]}
     const orangeColor = this.props.disabled ? {} : {nativeColor: orange[500]}
@@ -62,6 +63,19 @@ class Rating extends Component {
         className={this.props.classes.icon}
         {...normalColor} />
       : this.props.iconNormal
+
+    if (rest > 0 && Math.floor(this.state.hoverValue) < this.props.value) {
+      return (
+        <React.Fragment>
+          {React.cloneElement(iconNormal, { style: { position: 'absolute' } })}
+          {React.cloneElement(this.state.hoverValue < this.props.value ? iconHovered : iconFilled, {
+            style: {
+             clipPath: `polygon(0% 0%, ${rest * 100}% 0%, ${rest * 100}% 100%, 0% 100%)`
+            }
+          })}
+        </React.Fragment>
+      )
+    }
 
     if ((hovered && !filled) || (!hovered && filled)) {
       return this.props.iconHoveredRenderer ? this.props.iconHoveredRenderer({

@@ -11,6 +11,13 @@ storiesOf('Rating', module)
       onChange={action('onChange')}
     />
   ))
+  .add('with half stars', () => (
+    <Rating
+      value={3.5}
+      max={5}
+      onChange={action('onChange')}
+    />
+  ))
   .add('read only', () => (
     <Rating
       value={3}
