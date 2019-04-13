@@ -13,7 +13,7 @@ npm install material-ui-rating
 
 ## Usage
 ```js
-import { Rating } from 'material-ui-rating'
+import Rating from 'material-ui-rating'
 
 <Rating
   value={3}
