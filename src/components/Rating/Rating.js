@@ -52,14 +52,14 @@ class Rating extends Component {
       case 'normal':
         return iconNormalRenderer
           ? iconNormalRenderer({ ...this.props, index })
-          : (disabled ? React.cloneElement(iconNormal, { nativeColor: grey[300] }) : iconNormal)
+          : (disabled ? React.cloneElement(iconNormal, { htmlColor: grey[300] }) : iconNormal)
       case 'hovered':
         return iconHoveredRenderer
           ? iconHoveredRenderer({ ...this.props, index })
-          : (disabled ? React.cloneElement(iconHovered, { nativeColor: grey[300] }) : iconHovered)
+          : (disabled ? React.cloneElement(iconHovered, { htmlColor: grey[300] }) : iconHovered)
       case 'filled': return iconFilledRenderer
         ? iconFilledRenderer({ ...this.props, index })
-        : (disabled ? React.cloneElement(iconFilled, { nativeColor: grey[300] }) : iconFilled)
+        : (disabled ? React.cloneElement(iconFilled, { htmlColor: grey[300] }) : iconFilled)
     }
   }
 
@@ -132,9 +132,9 @@ Rating.defaultProps = {
   max: 5,
   readOnly: false,
   value: 0,
-  iconHovered: <StarBorder nativeColor={orange[500]} />,
-  iconFilled: <Star nativeColor={orange[500]} />,
-  iconNormal: <StarBorder nativeColor={grey[300]} />
+  iconHovered: <StarBorder htmlColor={orange[500]} />,
+  iconFilled: <Star htmlColor={orange[500]} />,
+  iconNormal: <StarBorder htmlColor={grey[300]} />
 }
 
 Rating.propTypes = {

@@ -43,17 +43,17 @@ storiesOf('Rating', module)
           value={3}
           max={5}
           onChange={(i) => console.log('onChange ' + i)}
-          iconFilled={<AddCircle nativeColor={green[500]} />}
-          iconHovered={<AddCircleOutline nativeColor={green[500]} />}
-          iconNormal={<Remove nativeColor={red[300]} />}
+          iconFilled={<AddCircle htmlColor={green[500]} />}
+          iconHovered={<AddCircleOutline htmlColor={green[500]} />}
+          iconNormal={<Remove htmlColor={red[300]} />}
         />
         <Rating
           value={3}
           max={5}
           onChange={(i) => console.log('onChange ' + i)}
-          iconFilled={<AddCircle nativeColor={green[500]} />}
-          iconHovered={<AddCircleOutline nativeColor={green[500]} />}
-          iconNormal={<Remove nativeColor={red[300]} />}
+          iconFilled={<AddCircle htmlColor={green[500]} />}
+          iconHovered={<AddCircleOutline htmlColor={green[500]} />}
+          iconNormal={<Remove htmlColor={red[300]} />}
           disabled
         />
       </div>

@@ -33,9 +33,9 @@ const red = require('@material-ui/core/colors/red').default;
       value={3}
       max={5}
       onChange={(i) => console.log('onChange ' + i)}
-      iconFilled={<AddCircle nativeColor={green[500]} />}
-      iconHovered={<AddCircleOutline nativeColor={green[500]} />}
-      iconNormal={<Remove nativeColor={red[300]} />}
+      iconFilled={<AddCircle htmlColor={green[500]} />}
+      iconHovered={<AddCircleOutline htmlColor={green[500]} />}
+      iconNormal={<Remove htmlColor={red[300]} />}
     />
 ```
 Custom Sizes:
@@ -106,9 +106,9 @@ const MyRating = ({classes}) => (
     value={3}
     max={5}
     onChange={(i) => console.log('onChange ' + i)}
-    iconFilledRenderer={({index}) => <AddCircle nativeColor={green[500]} />}
+    iconFilledRenderer={({index}) => <AddCircle htmlColor={green[500]} />}
     iconHoveredRenderer={({index}) => <span className={classes.icon}>{index}</span>}
-    iconNormalRenderer={({index}) => <AddCircleOutline nativeColor={green[500]} />}
+    iconNormalRenderer={({index}) => <AddCircleOutline htmlColor={green[500]} />}
     classes={classes}
   />
 );

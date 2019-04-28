@@ -1,6 +1,6 @@
 # Material-UI Rating
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-[![Build Status](https://travis-ci.org/TeamWertarbyte/material-ui-rating.svg)](https://travis-ci.org/TeamWertarbyte/material-ui-rating)
+[![Build Status](https://travis-ci.org/TeamWertarbyte/material-ui-rating.svg?branch=next)](https://travis-ci.org/TeamWertarbyte/material-ui-rating)
 
 ![Example](preview.gif)
 
@@ -8,7 +8,7 @@
 
 **Stable channel**
 ```sh
-npm install material-ui-rating
+npm install material-ui-rating@next
 ```
 
 ## Usage
