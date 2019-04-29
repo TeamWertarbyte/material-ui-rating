@@ -21,6 +21,7 @@ const styles = {
       marginLeft: 0
     }
   },
+  icon: {},
   disabled: noPointerEvents,
   readOnly: noPointerEvents
 }
@@ -39,6 +40,7 @@ class Rating extends Component {
 
   getIcon (type, index) {
     const {
+      classes,
       disabled,
       iconNormal,
       iconNormalRenderer,
@@ -48,18 +50,24 @@ class Rating extends Component {
       iconFilledRenderer
     } = this.props
 
+    const iconProps = { className: classes.icon }
+    if (disabled) {
+      iconProps.htmlColor = grey[300]
+    }
+
     switch (type) {
       case 'normal':
         return iconNormalRenderer
           ? iconNormalRenderer({ ...this.props, index })
-          : (disabled ? React.cloneElement(iconNormal, { htmlColor: grey[300] }) : iconNormal)
+          : React.cloneElement(iconNormal, iconProps)
       case 'hovered':
         return iconHoveredRenderer
           ? iconHoveredRenderer({ ...this.props, index })
-          : (disabled ? React.cloneElement(iconHovered, { htmlColor: grey[300] }) : iconHovered)
-      case 'filled': return iconFilledRenderer
-        ? iconFilledRenderer({ ...this.props, index })
-        : (disabled ? React.cloneElement(iconFilled, { htmlColor: grey[300] }) : iconFilled)
+          : React.cloneElement(iconHovered, iconProps)
+      case 'filled':
+        return iconFilledRenderer
+          ? iconFilledRenderer({ ...this.props, index })
+          : React.cloneElement(iconFilled, iconProps)
     }
   }
 
