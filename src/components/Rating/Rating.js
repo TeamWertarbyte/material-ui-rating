@@ -52,7 +52,7 @@ class Rating extends Component {
 
     const iconProps = { className: classes.icon }
     if (disabled) {
-      iconProps.nativeColor = grey[300]
+      iconProps.nativecolor = grey[300]
     }
 
     switch (type) {
@@ -140,9 +140,9 @@ Rating.defaultProps = {
   max: 5,
   readOnly: false,
   value: 0,
-  iconHovered: <StarBorder nativeColor={orange[500]} />,
-  iconFilled: <Star nativeColor={orange[500]} />,
-  iconNormal: <StarBorder nativeColor={grey[300]} />
+  iconHovered: <StarBorder nativecolor={orange[500]} />,
+  iconFilled: <Star nativecolor={orange[500]} />,
+  iconNormal: <StarBorder nativecolor={grey[300]} />
 }
 
 Rating.propTypes = {
