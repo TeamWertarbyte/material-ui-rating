@@ -103,7 +103,7 @@ class Rating extends Component {
   }
 
   render () {
-    const { classes, max, disabled, readOnly, value, onChange } = this.props
+    const { Component, classes, max, disabled, readOnly, value, onChange } = this.props
     const rating = []
 
     for (let i = 1; i <= max; i++) {
@@ -131,7 +131,7 @@ class Rating extends Component {
       )
     }
 
-    return (<div className={classes.root}>{rating}</div>)
+    return (<Component className={classes.root}>{rating}</Component>)
   }
 }
 
@@ -169,7 +169,9 @@ Rating.propTypes = {
   /** Don't allow input if set to true. */
   readOnly: PropTypes.bool,
   /** The value of the rating bar. */
-  value: PropTypes.number
+  value: PropTypes.number,
+  /** The component used for the root node. Either a string to use a DOM element or a component.*/
+  Component: PropTypes.elementType
 }
 
 export default withStyles(styles)(Rating)

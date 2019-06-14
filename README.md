@@ -38,6 +38,7 @@ import Rating from 'material-ui-rating'
 |onChange           |`func`  |       |Fired when a value is clicked.                                                       |
 |readOnly           |`bool`  |`false`|Don't allow input if set to true.                                                    |
 |value              |`number`|`0`    |The value of the rating bar.                                                         |
+|Component          |`elementType`|`div`|The component used for the root node. Either a string to use a DOM element or a component.|
 
 \* required property
 

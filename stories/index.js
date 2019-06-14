@@ -59,3 +59,4 @@ storiesOf('Rating', module)
       </div>
     )
   })
+  .add('with custom component', () => <Rating Component='span' onChange={action('onChange')} />)
