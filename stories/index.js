@@ -59,3 +59,11 @@ storiesOf('Rating', module)
       </div>
     )
   })
+  .add('right to left', () => {
+    return (<Rating
+      value={3.5}
+      rtl
+      max={5}
+      onChange={action('onChange')}
+    />)
+  })

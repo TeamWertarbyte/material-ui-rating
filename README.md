@@ -38,6 +38,7 @@ import Rating from 'material-ui-rating'
 |onChange           |`func`  |       |Fired when a value is clicked.                                                       |
 |readOnly           |`bool`  |`false`|Don't allow input if set to true.                                                    |
 |value              |`number`|`0`    |The value of the rating bar.                                                         |
+|rtl                |`bool`  |`false`|Set direction right to left                                                          |
 
 \* required property
 
