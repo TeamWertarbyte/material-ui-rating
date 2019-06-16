@@ -1,4 +1,6 @@
 import React from 'react'
+import { ThemeProvider as MuiThemeProvider } from '@material-ui/styles'
+import { createMuiTheme } from '@material-ui/core/styles'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import Rating from '../src'
@@ -60,3 +62,17 @@ storiesOf('Rating', module)
     )
   })
   .add('with custom component', () => <Rating Component='span' onChange={action('onChange')} />)
+  .add('right to left', () => {
+    return (
+      <MuiThemeProvider theme={getRtlTheme()}>
+        <Rating
+          value={3.5}
+          max={5}
+          onChange={action('onChange')}
+        />
+      </MuiThemeProvider>)
+  })
+
+function getRtlTheme () {
+  return createMuiTheme({ direction: 'rtl' })
+}
