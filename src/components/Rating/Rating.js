@@ -106,7 +106,7 @@ class Rating extends Component {
   }
 
   render () {
-    const { classes, max, disabled, readOnly, value, onChange } = this.props
+    const { component: Component, classes, max, disabled, readOnly, value, onChange } = this.props
     const rating = []
 
     for (let i = 1; i <= max; i++) {
@@ -134,11 +134,12 @@ class Rating extends Component {
       )
     }
 
-    return (<div className={classes.root}>{rating}</div>)
+    return (<Component className={classes.root}>{rating}</Component>)
   }
 }
 
 Rating.defaultProps = {
+  component: 'div',
   disabled: false,
   max: 5,
   readOnly: false,
@@ -151,6 +152,8 @@ Rating.defaultProps = {
 Rating.propTypes = {
   /** Useful to extend the style applied to components. See the repository README for the accepted keys. */
   classes: PropTypes.object.isRequired,
+  /** The component used for the root node. Either a string to use a DOM element or a component. */
+  component: PropTypes.elementType,
   /** Disables the rating and gray it out if set to true. */
   disabled: PropTypes.bool,
   /** This is the icon to be used as an icon in value range. */

@@ -27,6 +27,7 @@ import Rating from 'material-ui-rating'
 |Name               |Type    |Default|Description                                                                          |
 |-------------------|--------|-------|-------------------------------------------------------------------------------------|
 |classes*           |`object`|       |Useful to extend the style applied to components. The accepted keys are listed below.|
+|component          |`elementType`|`div`|The component used for the root node. Either a string to use a DOM element or a component.|
 |disabled           |`bool`  |`false`|Disables the rating and gray it out if set to true.                                  |
 |iconFilled         |`node`  |       |This is the icon to be used as an icon in value range.                               |
 |iconFilledRenderer |`func`  |       |Overrides filled icon renderer.                                                      |
