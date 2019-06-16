@@ -38,7 +38,6 @@ import Rating from 'material-ui-rating'
 |onChange           |`func`  |       |Fired when a value is clicked.                                                       |
 |readOnly           |`bool`  |`false`|Don't allow input if set to true.                                                    |
 |value              |`number`|`0`    |The value of the rating bar.                                                         |
-|rtl                |`bool`  |`false`|Set direction right to left                                                          |
 
 \* required property
 
@@ -52,6 +51,10 @@ You can override all the class names injected by Material-UI-Rating thanks to th
 - `icon` - Applied to the SvgIcon component
 - `disabled` - Applied to the IconButton component when disabled prop is `true`
 - `readOnly` - Applied to the IconButton component when readOnly prop is `true`
+
+## Rtl support
+
+Following MUi conventions, This package detects `rtl` from [`theme.direction`](https://material-ui.com/guides/right-to-left/), so rtl works out-of-the-box!
 
 ## License
 

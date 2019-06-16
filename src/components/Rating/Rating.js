@@ -12,25 +12,22 @@ const noPointerEvents = {
   pointerEvents: 'none'
 }
 
-const styles = {
-  root: {},
-  rootRtl: {
-    direction: 'rtl'
+const styles = theme => ({
+  root: {
+    direction: theme.direction
   },
   iconButton: {
     padding: 8,
     marginLeft: -8,
+    transform: theme.direction === 'rtl' ? 'scaleX(-1)' : 'none',
     '&:first-child': {
       marginLeft: 0
     }
   },
-  iconButtonRtl: {
-    transform: 'scaleX(-1)'
-  },
   icon: {},
   disabled: noPointerEvents,
   readOnly: noPointerEvents
-}
+})
 
 /**
  * Material design star rating component for your star application.
@@ -109,7 +106,7 @@ class Rating extends Component {
   }
 
   render () {
-    const { classes, max, disabled, readOnly, value, onChange, rtl } = this.props
+    const { classes, max, disabled, readOnly, value, onChange } = this.props
     const rating = []
 
     for (let i = 1; i <= max; i++) {
@@ -120,8 +117,7 @@ class Rating extends Component {
             classes.iconButton,
             {
               [classes.disabled]: disabled,
-              [classes.readOnly]: readOnly,
-              [classes.iconButtonRtl]: rtl
+              [classes.readOnly]: readOnly
             }
           )}
           disabled={disabled}
@@ -138,7 +134,7 @@ class Rating extends Component {
       )
     }
 
-    return (<div className={classNames(classes.root, { [classes.rootRtl]: rtl })}>{rating}</div>)
+    return (<div className={classes.root}>{rating}</div>)
   }
 }
 
@@ -176,9 +172,7 @@ Rating.propTypes = {
   /** Don't allow input if set to true. */
   readOnly: PropTypes.bool,
   /** The value of the rating bar. */
-  value: PropTypes.number,
-  /** Set direction right to left mode */
-  rtl: PropTypes.bool
+  value: PropTypes.number
 }
 
 export default withStyles(styles)(Rating)
