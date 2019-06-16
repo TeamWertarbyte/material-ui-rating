@@ -103,7 +103,7 @@ class Rating extends Component {
   }
 
   render () {
-    const { Component, classes, max, disabled, readOnly, value, onChange } = this.props
+    const { component: Component, classes, max, disabled, readOnly, value, onChange } = this.props
     const rating = []
 
     for (let i = 1; i <= max; i++) {
@@ -148,6 +148,8 @@ Rating.defaultProps = {
 Rating.propTypes = {
   /** Useful to extend the style applied to components. See the repository README for the accepted keys. */
   classes: PropTypes.object.isRequired,
+  /** The component used for the root node. Either a string to use a DOM element or a component. */
+  component: PropTypes.elementType,
   /** Disables the rating and gray it out if set to true. */
   disabled: PropTypes.bool,
   /** This is the icon to be used as an icon in value range. */
@@ -169,9 +171,7 @@ Rating.propTypes = {
   /** Don't allow input if set to true. */
   readOnly: PropTypes.bool,
   /** The value of the rating bar. */
-  value: PropTypes.number,
-  /** The component used for the root node. Either a string to use a DOM element or a component.*/
-  Component: PropTypes.elementType
+  value: PropTypes.number
 }
 
 export default withStyles(styles)(Rating)
