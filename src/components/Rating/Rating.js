@@ -12,11 +12,14 @@ const noPointerEvents = {
   pointerEvents: 'none'
 }
 
-const styles = {
-  root: {},
+const styles = theme => ({
+  root: {
+    direction: theme.direction
+  },
   iconButton: {
     padding: 8,
     marginLeft: -8,
+    transform: theme.direction === 'rtl' ? 'scaleX(-1)' : 'none',
     '&:first-child': {
       marginLeft: 0
     }
@@ -24,7 +27,7 @@ const styles = {
   icon: {},
   disabled: noPointerEvents,
   readOnly: noPointerEvents
-}
+})
 
 /**
  * Material design star rating component for your star application.
