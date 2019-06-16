@@ -136,6 +136,7 @@ class Rating extends Component {
 }
 
 Rating.defaultProps = {
+  component: 'div',
   disabled: false,
   max: 5,
   readOnly: false,
