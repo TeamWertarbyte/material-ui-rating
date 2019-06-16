@@ -64,14 +64,14 @@ storiesOf('Rating', module)
   .add('right to left', () => {
     return (
       <MuiThemeProvider theme={getRtlTheme()}>
-    <Rating
-      value={3.5}
-      max={5}
-      onChange={action('onChange')}
-    />
-    </MuiThemeProvider>)
+        <Rating
+          value={3.5}
+          max={5}
+          onChange={action('onChange')}
+        />
+      </MuiThemeProvider>)
   })
 
-function getRtlTheme() {
+function getRtlTheme () {
   return createMuiTheme({ direction: 'rtl' })
 }
