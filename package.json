@@ -36,9 +36,10 @@
     "@material-ui/core": "^4.1.1",
     "@material-ui/icons": "^4.0.0-beta.0",
     "@material-ui/styles": "^4.1.1",
-    "@storybook/addon-actions": "^4.1.11",
-    "@storybook/react": "^4.1.11",
+    "@storybook/addon-actions": "^5.1.8",
+    "@storybook/react": "^5.1.8",
     "babel-eslint": "^7.2.3",
+    "babel-loader": "^8.0.6",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "standard": "^11.0.0"
