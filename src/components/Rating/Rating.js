@@ -106,7 +106,7 @@ class Rating extends Component {
   }
 
   render () {
-    const { component: Component, classes, max, disabled, readOnly, value, onChange } = this.props
+    const { component: Component, className, classes, max, disabled, readOnly, value, onChange, ...other } = this.props
     const rating = []
 
     for (let i = 1; i <= max; i++) {
@@ -134,7 +134,7 @@ class Rating extends Component {
       )
     }
 
-    return (<Component className={classes.root}>{rating}</Component>)
+    return (<Component className={classNames(className, classes.root)} {...other}>{rating}</Component>)
   }
 }
 
@@ -150,6 +150,8 @@ Rating.defaultProps = {
 }
 
 Rating.propTypes = {
+  /** CSS classname to apply to the root component. */
+  className: PropTypes.string,
   /** Useful to extend the style applied to components. See the repository README for the accepted keys. */
   classes: PropTypes.object.isRequired,
   /** The component used for the root node. Either a string to use a DOM element or a component. */
@@ -160,10 +162,10 @@ Rating.propTypes = {
   iconFilled: PropTypes.node,
   /** Overrides filled icon renderer. */
   iconFilledRenderer: PropTypes.func,
-  /** Overrides hovered icon renderer. */
-  iconHoveredRenderer: PropTypes.func,
   /** This is the icon to be used as an hovered icon. */
   iconHovered: PropTypes.node,
+  /** Overrides hovered icon renderer. */
+  iconHoveredRenderer: PropTypes.func,
   /** This is the icon to be used as an normal icon. */
   iconNormal: PropTypes.node,
   /** Overrides normal icon renderer. */
