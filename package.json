@@ -1,6 +1,6 @@
 {
   "name": "material-ui-rating",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "description": "Material style rating",
   "main": "lib/index.js",
   "types": "src/index.d.ts",
