@@ -106,7 +106,23 @@ class Rating extends Component {
   }
 
   render () {
-    const { component: Component, className, classes, max, disabled, readOnly, value, onChange, ...other } = this.props
+    const {
+      className,
+      classes,
+      component: Component,
+      disabled,
+      iconFilled,
+      iconFilledRenderer,
+      iconHovered,
+      iconHoveredRenderer,
+      iconNormal,
+      iconNormalRenderer,
+      max,
+      onChange,
+      readOnly,
+      value,
+      ...other
+    } = this.props
     const rating = []
 
     for (let i = 1; i <= max; i++) {
@@ -141,12 +157,12 @@ class Rating extends Component {
 Rating.defaultProps = {
   component: 'div',
   disabled: false,
-  max: 5,
-  readOnly: false,
-  value: 0,
   iconHovered: <StarBorder htmlColor={orange[500]} />,
   iconFilled: <Star htmlColor={orange[500]} />,
-  iconNormal: <StarBorder htmlColor={grey[300]} />
+  iconNormal: <StarBorder htmlColor={grey[300]} />,
+  max: 5,
+  readOnly: false,
+  value: 0
 }
 
 Rating.propTypes = {
