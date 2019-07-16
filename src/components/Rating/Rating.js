@@ -75,7 +75,7 @@ class Rating extends Component {
   }
 
   renderIcon (i) {
-    const { value } = this.props
+    const { value, hoverDisabled } = this.props
 
     const rest = value >= i - 1 && value < i ? value - i + 1 : 0
     const filled = rest > 0 || i <= value
@@ -96,7 +96,7 @@ class Rating extends Component {
       )
     }
 
-    if ((hovered && !filled) || (!hovered && filled)) {
+    if (!hoverDisabled && ((hovered && !filled) || (!hovered && filled))){
       return this.getIcon('hovered', i)
     } else if (filled) {
       return this.getIcon('filled', i)
@@ -162,6 +162,7 @@ Rating.defaultProps = {
   iconNormal: <StarBorder htmlColor={grey[300]} />,
   max: 5,
   readOnly: false,
+  hoverDisabled: false,
   value: 0
 }
 
@@ -192,6 +193,8 @@ Rating.propTypes = {
   onChange: PropTypes.func,
   /** Don't allow input if set to true. */
   readOnly: PropTypes.bool,
+   /** Disable hover effect. */
+  hoverDisabled: PropTypes.bool,
   /** The value of the rating bar. */
   value: PropTypes.number
 }
