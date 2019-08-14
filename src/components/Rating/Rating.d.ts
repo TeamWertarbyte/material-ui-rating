@@ -13,6 +13,7 @@ export interface RatingProps
   > {
   component?: React.ElementType<React.HTMLAttributes<HTMLDivElement>>;
   disabled?: boolean;
+  disableHover?: boolean,
   iconFilled?: React.ReactNode;
   iconFilledRenderer?: IconRenderer;
   iconHovered?: React.ReactNode;
