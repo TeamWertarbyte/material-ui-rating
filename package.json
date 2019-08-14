@@ -7,8 +7,8 @@
   "scripts": {
     "test": "standard",
     "lintfix": "standard --fix",
-    "build": "babel src -d lib && (shopt -s globstar && cd src && cp --parents -vt ../lib/ **/*.d.ts)",
-    "prepare": "babel src -d lib && (shopt -s globstar && cd src && cp --parents -vt ../lib/ **/*.d.ts)",
+    "build": "babel src -d lib && (bash -c 'shopt -s globstar && cd src && cp --parents -vt ../lib/ **/*.d.ts')",
+    "prepare": "babel src -d lib && (bash -c 'shopt -s globstar && cd src && cp --parents -vt ../lib/ **/*.d.ts')",
     "storybook": "start-storybook -p 6006"
   },
   "repository": {
