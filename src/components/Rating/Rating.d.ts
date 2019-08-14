@@ -22,6 +22,7 @@ export interface RatingProps
   max?: number;
   onChange?: (newValue: number) => void;
   readOnly?: boolean;
+  hoverDisabled?: boolean,
   value?: number;
 }
 
@@ -30,7 +31,8 @@ export type RatingClassKey =
   | "iconButton"
   | "icon"
   | "disabled"
-  | "readOnly";
+  | "readOnly"
+  | "hoverDisabled";
 
 declare const Rating: React.ComponentType<RatingProps>;
 

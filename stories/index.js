@@ -27,6 +27,13 @@ storiesOf('Rating', module)
       readOnly
     />
   ))
+  .add('hover disabled', () => (
+    <Rating
+      value={3}
+      max={5}
+      hoverDisabled
+    />
+  ))
   .add('disabled', () => (
     <Rating
       value={3}

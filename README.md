@@ -38,6 +38,7 @@ import Rating from 'material-ui-rating'
 |max                |`number`|`5`    |The max value of the rating bar.                                                     |
 |onChange           |`func`  |       |Fired when a value is clicked.                                                       |
 |readOnly           |`bool`  |`false`|Don't allow input if set to true.                                                    |
+|hoverDisabled      |`bool`  |`false`|Disable hover if set to true.                                                        |
 |value              |`number`|`0`    |The value of the rating bar.                                                         |
 
 \* required property
