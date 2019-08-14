@@ -96,7 +96,7 @@ class Rating extends Component {
       )
     }
 
-    if (!disableHover && ((hovered && !filled) || (!hovered && filled))){
+    if (!disableHover && ((hovered && !filled) || (!hovered && filled))) {
       return this.getIcon('hovered', i)
     } else if (filled) {
       return this.getIcon('filled', i)
