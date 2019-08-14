@@ -29,6 +29,7 @@ import Rating from 'material-ui-rating'
 |classes*           |`object`|       |Useful to extend the style applied to components. The accepted keys are listed below.|
 |component          |`elementType`|`div`|The component used for the root node. Either a string to use a DOM element or a component.|
 |disabled           |`bool`  |`false`|Disables the rating and gray it out if set to true.                                  |
+|disableHover       |`bool`  |`false`|Disable hover effects if set to true.                                                        |
 |iconFilled         |`node`  |       |This is the icon to be used as an icon in value range.                               |
 |iconFilledRenderer |`func`  |       |Overrides filled icon renderer.                                                      |
 |iconHoveredRenderer|`func`  |       |Overrides hovered icon renderer.                                                     |
@@ -38,7 +39,6 @@ import Rating from 'material-ui-rating'
 |max                |`number`|`5`    |The max value of the rating bar.                                                     |
 |onChange           |`func`  |       |Fired when a value is clicked.                                                       |
 |readOnly           |`bool`  |`false`|Don't allow input if set to true.                                                    |
-|hoverDisabled      |`bool`  |`false`|Disable hover if set to true.                                                        |
 |value              |`number`|`0`    |The value of the rating bar.                                                         |
 
 \* required property

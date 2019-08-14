@@ -75,7 +75,7 @@ class Rating extends Component {
   }
 
   renderIcon (i) {
-    const { value, hoverDisabled } = this.props
+    const { value, disableHover } = this.props
 
     const rest = value >= i - 1 && value < i ? value - i + 1 : 0
     const filled = rest > 0 || i <= value
@@ -96,7 +96,7 @@ class Rating extends Component {
       )
     }
 
-    if (!hoverDisabled && ((hovered && !filled) || (!hovered && filled))){
+    if (!disableHover && ((hovered && !filled) || (!hovered && filled))){
       return this.getIcon('hovered', i)
     } else if (filled) {
       return this.getIcon('filled', i)
@@ -111,6 +111,7 @@ class Rating extends Component {
       classes,
       component: Component,
       disabled,
+      disableHover,
       iconFilled,
       iconFilledRenderer,
       iconHovered,
@@ -157,12 +158,12 @@ class Rating extends Component {
 Rating.defaultProps = {
   component: 'div',
   disabled: false,
+  disableHover: false,
   iconHovered: <StarBorder htmlColor={orange[500]} />,
   iconFilled: <Star htmlColor={orange[500]} />,
   iconNormal: <StarBorder htmlColor={grey[300]} />,
   max: 5,
   readOnly: false,
-  hoverDisabled: false,
   value: 0
 }
 
@@ -175,6 +176,8 @@ Rating.propTypes = {
   component: PropTypes.elementType,
   /** Disables the rating and gray it out if set to true. */
   disabled: PropTypes.bool,
+  /** Disable hover effects if set to true. */
+  disableHover: PropTypes.bool,
   /** This is the icon to be used as an icon in value range. */
   iconFilled: PropTypes.node,
   /** Overrides filled icon renderer. */
@@ -193,8 +196,6 @@ Rating.propTypes = {
   onChange: PropTypes.func,
   /** Don't allow input if set to true. */
   readOnly: PropTypes.bool,
-   /** Disable hover effect. */
-  hoverDisabled: PropTypes.bool,
   /** The value of the rating bar. */
   value: PropTypes.number
 }

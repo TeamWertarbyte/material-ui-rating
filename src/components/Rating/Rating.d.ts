@@ -13,6 +13,7 @@ export interface RatingProps
   > {
   component?: React.ElementType<React.HTMLAttributes<HTMLDivElement>>;
   disabled?: boolean;
+  disableHover?: boolean,
   iconFilled?: React.ReactNode;
   iconFilledRenderer?: IconRenderer;
   iconHovered?: React.ReactNode;
@@ -22,7 +23,6 @@ export interface RatingProps
   max?: number;
   onChange?: (newValue: number) => void;
   readOnly?: boolean;
-  hoverDisabled?: boolean,
   value?: number;
 }
 
@@ -31,8 +31,7 @@ export type RatingClassKey =
   | "iconButton"
   | "icon"
   | "disabled"
-  | "readOnly"
-  | "hoverDisabled";
+  | "readOnly";
 
 declare const Rating: React.ComponentType<RatingProps>;
 
