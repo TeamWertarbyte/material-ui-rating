@@ -41,7 +41,7 @@
     "@storybook/react": "^5.3.19",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
-    "react": "^16.8.1",
+    "react": "^16.0.0 || ^17.0.0",
     "react-dom": "^16.13.1",
     "standard": "^14.3.4"
   },
